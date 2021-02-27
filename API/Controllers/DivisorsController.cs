@@ -7,6 +7,12 @@ namespace API.Controllers
     [Route("[controller]")]
     public class DivisorsController : Controller
     {
+        [HttpGet]
+        public string HelloWorld()
+        {
+            return "Hello World!";
+        }
+
         [HttpPost]
         public IActionResult GetDivisorsAndPrimeDivisors([FromBody] int number)
         {
