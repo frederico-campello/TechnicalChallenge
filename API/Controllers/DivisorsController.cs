@@ -8,13 +8,7 @@ namespace API.Controllers
     public class DivisorsController : Controller
     {
         [HttpGet]
-        public string HelloWorld()
-        {
-            return "Hello World!";
-        }
-
-        [HttpPost]
-        public IActionResult GetDivisorsAndPrimeDivisors([FromBody] int number)
+        public IActionResult GetDivisorsAndPrimeDivisors([FromQuery] int number)
         {
             DivisorsService service = new DivisorsService();
             return Ok(service.Result(number));
