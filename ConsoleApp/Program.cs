@@ -11,10 +11,10 @@ namespace ConsoleApp
         {
             try
             {
-                //Console.Write("Digite um número: ");
-                //int inputNumber = int.Parse(Console.ReadLine());
-                //Console.WriteLine("=====================");
-                HttpResponseMessage response = await client.GetAsync("https://localhost:44334/Divisors");
+                Console.Write("Digite um número: ");
+                int inputNumber = int.Parse(Console.ReadLine());
+                Console.WriteLine("=====================");
+                HttpResponseMessage response = await client.GetAsync($"https://localhost:44334/Divisors?number={inputNumber}");
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseBody);
